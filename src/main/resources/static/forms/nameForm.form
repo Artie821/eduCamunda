@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 2,
+  "components": [
+    {
+      "label": "Podaj imię",
+      "type": "textfield",
+      "id": "Field_0p6iqna",
+      "key": "userName",
+      "description": "imię wprowadzanego użytkownika",
+      "validate": {
+        "required": true
+      }
+    }
+  ],
+  "type": "default",
+  "id": "Form_0dh765k"
+}
