@@ -1,3 +1,13 @@
+Aby wywołać normalny przebieg aplikacji należy podać dowolne userName w pierwszym userTasku i surnameForm w userTasku nr 2 o długości conajmniej 3 liter.
+
+Aby wywołać nadpisanie wartości userSurname należy podać dowolne userName w pierwszym userTasku i surnameForm w userTasku nr 2 o długości mniejszej niż 3 litery - wartość userSurname zostanie automatycznie napisana wartością "LongUserSurname".
+
+Aby wywołać ERROR należy podać dowolne userName w pierwszym userTasku i userSurname w userTasku nr 2 o wartości "er"
+{"variables":
+    {"surnameForm": {"value": "er"}}
+}
+
+
 # REST endpoints:
 
 # 1. Tworzenie nowej instacji z kluczem biznesowym:
