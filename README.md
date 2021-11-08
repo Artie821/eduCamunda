@@ -21,3 +21,17 @@ Body:
     {"userName": {"value": "wartosc_zmiennej_userName"}}
 }
 
+# 3. Wysłanie wiadomości:
+POST
+http://localhost:8080/rest-engine/message
+Content-Type: application/json
+
+Body:
+
+{
+  "messageName" : "DataChanged",
+  "businessKey" : "{buisness_key}",
+  "processVariables" : {
+    "name" : {"value" : "IMIE", "type": "String"}
+                  }
+  }
