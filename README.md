@@ -1,3 +1,7 @@
+# CAMUNDA EDU
+
+![alt text](https://github.com/Artie821/ONL_JEE_S_03_Projekt_koncowy/blob/master/src/main/webapp/images/screencapture-bookexchangeapp-herokuapp-2021-06-29-12_59_22.jpg)
+
 Aby wywołać normalny przebieg aplikacji należy podać dowolne userName w pierwszym userTasku i surnameForm w userTasku nr 2 o długości conajmniej 3 liter.
 
 Aby wywołać nadpisanie wartości userSurname należy podać dowolne userName w pierwszym userTasku i surnameForm w userTasku nr 2 o długości mniejszej niż 3 litery - wartość userSurname zostanie automatycznie napisana wartością "LongUserSurname".
