@@ -7,6 +7,12 @@ Aby wywołać ERROR należy podać dowolne userName w pierwszym userTasku i user
     {"surnameForm": {"value": "er"}}
 }
 
+Dla user Task 1 zaimplementowano timer wypisujący log co określoną w logice biznesowej wartośc czasu, 
+jeśli instancja rozpoczęła się o niepoarzystej minucie - logger odpali się co 5 minut,
+w przeciwnym razie odpali się co 2 minuty.
+
+Dla user Task 2 zaimplementowano boundary event oczekujący na wiadomość o nazwie: DataChange
+"messageName" : "DataChanged" 
 
 # REST endpoints:
 
@@ -26,12 +32,19 @@ POST
 http://localhost:8080/engine-rest/task/{ID_TASKA}/complete
 Content-Type: application/json
 
+dla user Task1:
+
 Body:
 {"variables":
     {"userName": {"value": "wartosc_zmiennej_userName"}}
 }
 
-# 3. Wysłanie wiadomości:
+dla userTask2:
+{"variables":
+{"surnameForm": {"value": "wartosc_zmiennej_surnameForm"}}
+}
+
+# 3. Wysłanie wiadomości dla userTask2:
 POST
 http://localhost:8080/rest-engine/message
 Content-Type: application/json

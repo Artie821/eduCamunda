@@ -37,5 +37,4 @@ public class Application implements LoggerInterface {
     public static void main(String... args) {
         SpringApplication.run(Application.class, args);
     }
-
 }

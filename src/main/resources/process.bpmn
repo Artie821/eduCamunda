@@ -9,6 +9,11 @@
     </bpmn:startEvent>
     <bpmn:sequenceFlow id="Flow_0qur0yc" sourceRef="StartEvent_1" targetRef="Activity_0ru6aq4" />
     <bpmn:userTask id="Activity_0ru6aq4" name="Set user Name" camunda:formKey="camunda-forms:/forms/nameForm.form">
+      <bpmn:extensionElements>
+        <camunda:inputOutput>
+          <camunda:outputParameter name="duration">R/PT1M</camunda:outputParameter>
+        </camunda:inputOutput>
+      </bpmn:extensionElements>
       <bpmn:incoming>Flow_0qur0yc</bpmn:incoming>
       <bpmn:outgoing>Flow_0xjrihh</bpmn:outgoing>
     </bpmn:userTask>
@@ -27,7 +32,7 @@
     <bpmn:boundaryEvent id="Event_05k678r" cancelActivity="false" attachedToRef="Activity_0ru6aq4">
       <bpmn:outgoing>Flow_1jyrbn2</bpmn:outgoing>
       <bpmn:timerEventDefinition id="TimerEventDefinition_1ro9fl7">
-        <bpmn:timeCycle xsi:type="bpmn:tFormalExpression">R/PT1M</bpmn:timeCycle>
+        <bpmn:timeCycle xsi:type="bpmn:tFormalExpression">#{duration}</bpmn:timeCycle>
       </bpmn:timerEventDefinition>
     </bpmn:boundaryEvent>
     <bpmn:sequenceFlow id="Flow_1jyrbn2" sourceRef="Event_05k678r" targetRef="Activity_14lupa7" />
@@ -35,7 +40,7 @@
       <bpmn:incoming>Flow_154b4xh</bpmn:incoming>
     </bpmn:endEvent>
     <bpmn:sequenceFlow id="Flow_154b4xh" sourceRef="Activity_14lupa7" targetRef="Event_0vat67c" />
-    <bpmn:serviceTask id="Activity_14lupa7" name="Taking lot of time message / every minute log" camunda:class="com.example.workflow.LongTimeLogDelegate">
+    <bpmn:serviceTask id="Activity_14lupa7" name="Taking lot of time message log" camunda:class="com.example.workflow.LongTimeLogDelegate">
       <bpmn:incoming>Flow_1jyrbn2</bpmn:incoming>
       <bpmn:outgoing>Flow_154b4xh</bpmn:outgoing>
     </bpmn:serviceTask>
@@ -72,7 +77,7 @@
       <bpmn:incoming>Flow_0vzl2ms</bpmn:incoming>
     </bpmn:endEvent>
     <bpmn:sequenceFlow id="Flow_0vzl2ms" sourceRef="Activity_1l67wbo" targetRef="Event_03khyzs" />
-    <bpmn:userTask id="Activity_1l67wbo" name="User error event">
+    <bpmn:userTask id="Activity_1l67wbo" name="User error handling">
       <bpmn:incoming>Flow_01lzyj5</bpmn:incoming>
       <bpmn:outgoing>Flow_0vzl2ms</bpmn:outgoing>
     </bpmn:userTask>
@@ -92,11 +97,10 @@
       <bpmn:incoming>Flow_13avpgo</bpmn:incoming>
       <bpmn:terminateEventDefinition id="TerminateEventDefinition_1222xfd" />
     </bpmn:endEvent>
-    <bpmn:userTask id="Activity_00soqsi" name="User data changed">
+    <bpmn:userTask id="Activity_00soqsi" name="User data changed handling">
       <bpmn:extensionElements>
         <camunda:formData>
           <camunda:formField id="name" label="name" type="string" />
-          <camunda:formField id="surname" label="surname" type="string" />
         </camunda:formData>
       </bpmn:extensionElements>
       <bpmn:incoming>Flow_1ff8a6n</bpmn:incoming>
@@ -135,7 +139,7 @@
         <di:waypoint x="680" y="250" />
         <di:waypoint x="660" y="250" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="704" y="296" width="71" height="27" />
+          <dc:Bounds x="694" y="296" width="71" height="27" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_1yrzsmb_di" bpmnElement="Flow_1yrzsmb">

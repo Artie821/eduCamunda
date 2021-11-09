@@ -14,14 +14,14 @@ public class LoggerDelegate implements JavaDelegate, LoggerInterface {
     public void execute(DelegateExecution execution) throws Exception {
 
         LOGGER.info("\n\n  ... LoggerDelegate invoked by "
-                + "processDefinitionId=" + execution.getProcessDefinitionId()
-                + ", activtyId=" + execution.getCurrentActivityId()
-                + ", activtyName='" + execution.getCurrentActivityName() + "'"
-                + ", processInstanceId=" + execution.getProcessInstanceId()
-                + ", businessKey=" + execution.getProcessBusinessKey()
-                + ", executionId=" + execution.getId()
-                + ", userNameLog=" + execution.getVariable("userName")
-                + ", userSurNameLog=" + execution.getVariable("surnameForm")
+                + "\n processDefinitionId=" + execution.getProcessDefinitionId()
+                + ",\n activtyId=" + execution.getCurrentActivityId()
+                + ",\n activtyName='" + execution.getCurrentActivityName() + "'"
+                + ",\n processInstanceId=" + execution.getProcessInstanceId()
+                + ",\n businessKey=" + execution.getProcessBusinessKey()
+                + ",\n executionId=" + execution.getId()
+                + ",\n userNameLog=" + execution.getVariable("userName")
+                + ",\n userSurNameLog=" + execution.getVariable("surnameForm")
                 + " \n\n");
 
     }
