@@ -9,11 +9,6 @@
     </bpmn:startEvent>
     <bpmn:sequenceFlow id="Flow_0qur0yc" sourceRef="StartEvent_1" targetRef="Activity_0ru6aq4" />
     <bpmn:userTask id="Activity_0ru6aq4" name="Set user Name" camunda:formKey="camunda-forms:/forms/nameForm.form">
-      <bpmn:extensionElements>
-        <camunda:inputOutput>
-          <camunda:outputParameter name="duration">R/PT1M</camunda:outputParameter>
-        </camunda:inputOutput>
-      </bpmn:extensionElements>
       <bpmn:incoming>Flow_0qur0yc</bpmn:incoming>
       <bpmn:outgoing>Flow_0xjrihh</bpmn:outgoing>
     </bpmn:userTask>
