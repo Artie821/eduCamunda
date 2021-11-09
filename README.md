@@ -1,6 +1,6 @@
 # CAMUNDA EDU
 
-![alt text](https://github.com/Artie821/ONL_JEE_S_03_Projekt_koncowy/blob/master/src/main/webapp/images/screencapture-bookexchangeapp-herokuapp-2021-06-29-12_59_22.jpg)
+![alt text](https://github.com/Artie821/eduCamunda/blob/master/src/main/resources/process.png)
 
 Aby wywołać normalny przebieg aplikacji należy podać dowolne userName w pierwszym userTasku i surnameForm w userTasku nr 2 o długości conajmniej 3 liter.
 
