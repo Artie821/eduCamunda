@@ -18,6 +18,8 @@ w przeciwnym razie odpali się co 2 minuty.
 Dla user Task 2 zaimplementowano boundary event oczekujący na wiadomość o nazwie: DataChange
 "messageName" : "DataChanged" 
 
+Signal event pod nazwą SignalMSG zatrzymuje wykonywanie wszystkich aktywnych instancji i loguje ich zatrzymanie.
+
 # REST endpoints:
 
 # 1. Tworzenie nowej instacji z kluczem biznesowym:
@@ -50,7 +52,7 @@ dla userTask2:
 
 # 3. Wysłanie wiadomości dla userTask2:
 POST
-http://localhost:8080/rest-engine/message
+http://localhost:8080/engine-rest/message
 Content-Type: application/json
 
 Body:
@@ -59,6 +61,17 @@ Body:
   "messageName" : "DataChanged",
   "businessKey" : "{buisness_key}",
   "processVariables" : {
-    "name" : {"value" : "IMIE", "type": "String"}
+    "userName" : {"value" : "IMIE", "type": "String"}
                   }
   }
+
+# 4. Wysłanie Signal dla userTask2:
+POST
+http://localhost:8080/engine-rest/signal
+Content-Type: application/json
+
+Body:
+
+{
+"name" : "SignalMSG"
+}
