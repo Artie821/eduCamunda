@@ -75,3 +75,11 @@ Body:
 {
 "name" : "SignalMSG"
 }
+
+# 5. Pobieranie listy instancji:
+GET
+http://localhost:8080/engine-rest/process-instance
+
+# 6. Pobieranie listy Tasków:
+GET
+http://localhost:8080/engine-rest/task
